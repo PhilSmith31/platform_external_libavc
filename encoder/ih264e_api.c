@@ -1147,6 +1147,27 @@ static IV_STATUS_T api_check_struct_sanity(iv_obj_t *ps_handle,
                         return (IV_FAIL);
                     }
 
+<<<<<<< HEAD
+=======
+                    if(ps_ip->s_ive_ip.u4_wd & 1)
+                    {
+                        ps_op->s_ive_op.u4_error_code |= 1
+                                        << IVE_UNSUPPORTEDPARAM;
+                        ps_op->s_ive_op.u4_error_code |=
+                                        IH264E_WIDTH_NOT_SUPPORTED;
+                        return (IV_FAIL);
+                    }
+
+                    if(ps_ip->s_ive_ip.u4_ht & 1)
+                    {
+                        ps_op->s_ive_op.u4_error_code |= 1
+                                        << IVE_UNSUPPORTEDPARAM;
+                        ps_op->s_ive_op.u4_error_code |=
+                                        IH264E_HEIGHT_NOT_SUPPORTED;
+                        return (IV_FAIL);
+                    }
+
+>>>>>>> android-7.1.2_r39
                     break;
                 }
 
